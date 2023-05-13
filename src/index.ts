@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use("/weather", weatherRouter);
+app.use("/api/weather", weatherRouter);
 
 app
   .listen(PORT, () => {

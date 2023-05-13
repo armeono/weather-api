@@ -20,4 +20,14 @@ export type ForecastReturnObject = {
   windSpeedMPH: number;
 };
 
-export type HistoryReturnObject = {};
+export type HistoryReturnObject = {
+  date: string;
+  averageTemperatureCelcius: number;
+  averageTemperatureFahrenheit: number;
+  description: string;
+  uv: number;
+  chanceOfRain: number;
+  humidity: number;
+  windSpeedKPH: number;
+  windSpeedMPH: number;
+};

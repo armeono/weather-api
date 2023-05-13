@@ -21,10 +21,11 @@ router.get("/forecast/:location", async (req, res) => {
   res.send(weatherForecast);
 });
 
-router.get("/history/:location", async (req, res) => {
+router.get("/history/:location/:date", async (req, res) => {
   const location = req.params.location;
+  const date = req.params.date;
 
-  const weatherHistory = await getHistory(location);
+  const weatherHistory = await getHistory(location, date);
 
   res.send(weatherHistory);
 });
