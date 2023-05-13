@@ -59,20 +59,23 @@ Get the weather forecast for a specific location.
 
 Get the weather history for a specific location.
 
-- **URL:** `/weather/history/:location`
+- **URL:** `/weather/history/:location/:date`
 - **Method:** `GET`
 - **Parameters:**
   - `location`: The location for which to retrieve the weather history.
+  - `date`: The date for which to retrieve the weather history.
   
 #### Example Weather History Response
 
 ```json
 {
-  "location": "New York",
-  "temperature": 20,
-  "description": "Partly cloudy",
-  "humidity": 70,
-  "windSpeed": 15
+    "location": "Barcelona",
+    "temeperatureCelcius": 14,
+    "temperatureFahrenheit": 57.2,
+    "description": "Partly cloudy",
+    "humidity": 88,
+    "windSpeedKPH": 11.2,
+    "windSpeedMPH": 6.9
 }
 ```
 
