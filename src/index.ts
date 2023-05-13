@@ -1,5 +1,6 @@
 import express from "express";
 import weatherRouter from "./routes/weather";
+require("dotenv").config();
 
 const app = express();
 
