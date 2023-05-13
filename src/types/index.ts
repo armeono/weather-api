@@ -1,4 +1,4 @@
-export type WeatherReturnObject = {
+export type CurrentReturnObject = {
   location: string;
   temeperatureCelcius: number;
   temperatureFahrenheit: number;
@@ -7,3 +7,17 @@ export type WeatherReturnObject = {
   windSpeedKPH: number;
   windSpeedMPH: number;
 };
+
+export type ForecastReturnObject = {
+  date: string;
+  averageTemperatureCelcius: number;
+  averageTemperatureFahrenheit: number;
+  description: string;
+  uv: number;
+  chanceOfRain: number;
+  humidity: number;
+  windSpeedKPH: number;
+  windSpeedMPH: number;
+};
+
+export type HistoryReturnObject = {};

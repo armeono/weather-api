@@ -1,1 +1,1 @@
-export const getHistory = () => {};
+export const getHistory = (location: string) => {};

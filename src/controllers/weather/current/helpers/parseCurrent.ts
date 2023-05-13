@@ -1,6 +1,6 @@
-import { WeatherReturnObject } from "../../../../types";
+import { CurrentReturnObject } from "../../../../types";
 
-export const parseCurrent = (currentWeather: any): WeatherReturnObject => {
+export const parseCurrent = (currentWeather: any): CurrentReturnObject => {
   return {
     location: currentWeather.data.location.name,
     temeperatureCelcius: currentWeather.data.current.temp_c,

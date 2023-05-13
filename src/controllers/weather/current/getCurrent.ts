@@ -1,6 +1,6 @@
 import weatherAxios from "../../../config/axios";
 import { parseCurrent } from "./helpers/parseCurrent";
-import { WeatherReturnObject } from "../../../types";
+import { CurrentReturnObject } from "../../../types";
 
 export const getCurrent = async (location: string) => {
   try {
@@ -10,7 +10,7 @@ export const getCurrent = async (location: string) => {
       },
     });
 
-    const returnObject: WeatherReturnObject = parseCurrent(currentWeather);
+    const returnObject: CurrentReturnObject = parseCurrent(currentWeather);
 
     return returnObject;
   } catch (err: any) {
