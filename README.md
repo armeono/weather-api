@@ -13,8 +13,6 @@ Get the current weather for a specific location.
 - **Parameters:**
   - `location`: The location for which to retrieve the current weather.
 
-#### Example
-
 
 ### Weather Forecast
 
@@ -25,8 +23,6 @@ Get the weather forecast for a specific location.
 - **Parameters:**
   - `location`: The location for which to retrieve the weather forecast.
 
-#### Example
-
 
 ### Weather History
 
@@ -36,8 +32,6 @@ Get the weather history for a specific location.
 - **Method:** `GET`
 - **Parameters:**
   - `location`: The location for which to retrieve the weather history.
-
-#### Example
 
 
 ## Response Format
