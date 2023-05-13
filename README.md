@@ -68,15 +68,18 @@ Get the weather history for a specific location.
 #### Example Weather History Response
 
 ```json
-{
-    "location": "Barcelona",
-    "temeperatureCelcius": 14,
-    "temperatureFahrenheit": 57.2,
-    "description": "Partly cloudy",
-    "humidity": 88,
-    "windSpeedKPH": 11.2,
-    "windSpeedMPH": 6.9
-}
+[
+    {
+        "date": "2023-05-12",
+        "averageTemperatureCelcius": 17,
+        "averageTemperatureFahrenheit": 62.6,
+        "description": "Light rain shower",
+        "uv": 4,
+        "humidity": 92,
+        "windSpeedKPH": 18,
+        "windSpeedMPH": 11.2
+    }
+]
 ```
 
 
