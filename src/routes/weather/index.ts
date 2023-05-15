@@ -2,6 +2,8 @@ import { Router } from "express";
 import { getCurrent } from "../../controllers/weather/current/getCurrent";
 import { getForecast } from "../../controllers/weather/forecast/getForecast";
 import { getHistory } from "../../controllers/weather/history/getHistory";
+import { redisClient } from "../../config/redis";
+import { weatherHistoryMiddleware } from "../../middleware/weatherHistory";
 const router = Router();
 
 /**
@@ -166,12 +168,28 @@ router.get("/forecast/:location", async (req, res) => {
  *               $ref: '#/components/schemas/HistoryReturnObject'
  */
 
-router.get("/history/:location/:date", async (req, res) => {
-  const location = req.params.location;
-  const date = req.params.date;
+router.get(
+  "/history/:location/:date",
+  weatherHistoryMiddleware,
+  async (req, res) => {
+    const location = req.params.location;
+    const date = req.params.date;
 
-  const weatherHistory = await getHistory(location, date);
+    const weatherHistory = await getHistory(location, date);
 
-  res.status(200).json(weatherHistory);
-});
+    const redisWeatherObject = {
+      city: location,
+      date: date,
+      weatherHistory: weatherHistory,
+    };
+
+    redisClient.setEx(
+      "weatherHistory",
+      1800,
+      JSON.stringify(redisWeatherObject)
+    );
+
+    res.status(200).json(weatherHistory);
+  }
+);
 export default router;
