@@ -2,6 +2,19 @@
 
 This API provides weather information based on location.
 
+## Installation and setup
+
+To install the dependencies and start the project, run the following commands:
+
+```shell
+npm install
+```
+
+```shell
+npm run dev
+```
+
+
 ## Endpoints
 
 ### Current Weather
